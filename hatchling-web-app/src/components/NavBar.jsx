@@ -1,5 +1,5 @@
 import logo from './Hatchling.png';
-
+import { Link } from "react-router-dom";
 export default function Navbar(){
     return (
             <nav className="nav">
@@ -9,16 +9,16 @@ export default function Navbar(){
                 </div>
                 <ul>
                     <li>
-                        <a href="/Home" className="home">Home</a>
+                        <Link to="/" className="home">Home</Link>
                     </li>
                     <li>
-                        <a href="/Characters" className="characters">Characters</a>
+                        <Link to="/Characters" className="characters">Characters</Link>
                     </li>
                     <li>
-                        <a href="/Help" className="help">Help</a>
+                        <Link to="/Help" className="help">Help</Link>
                     </li>
                     <li>
-                        <a href="/About" className="about">About</a>
+                        <Link to="/About" className="about">About</Link>
                     </li>
                 </ul>
             </nav>
