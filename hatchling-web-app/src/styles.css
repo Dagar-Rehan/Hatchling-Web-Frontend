@@ -8,10 +8,16 @@ body {
 .nav {
     background-color:rgb(7, 37, 7);
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
+}
+
+.nav #Icon {
+  grid-column: 1 / 2;
+  justify-self: start;
+  padding-left: 5em;
 }
 
 .logo {
@@ -20,13 +26,16 @@ body {
 }
 
 .site-title {
+    width: 100%;
     font-size: 1rem;
     color:rgb(0, 180, 9);
     padding-left: 1rem;
 }
 
 .nav ul {
-    padding: 0;
+    grid-column: 2 / 3;
+    justify-self: end;
+    padding-right: 5em;
     margin: 0;
     list-style: none;
     display: flex;
@@ -37,12 +46,11 @@ body {
     text-decoration: none;
 }
 
-.home{
+.home {
     color: white;
-    padding-left: 83rem;
 }
 
-.characters{
+.characters {
     color: white;
 }
 

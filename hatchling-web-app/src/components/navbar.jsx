@@ -3,9 +3,10 @@ import logo from './Hatchling.png';
 export default function Navbar(){
     return (
             <nav className="nav">
-                <img src={logo} alt="Logo" className="logo"/>
-                <a href="/" className="site-title" >Hatchling
-                </a>
+                <div id="Icon">
+                  <img src={logo} alt="Logo" className="logo"/>
+                  <a href="/" className="site-title" >Hatchling</a>
+                </div>
                 <ul>
                     <li>
                         <a href="/Home" className="home">Home</a>
