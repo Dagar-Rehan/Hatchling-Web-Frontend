@@ -1,2 +1,7 @@
-npm install react-router-dom
-npm install bootstrap
+# Hatchling-Web-Frontend
+Hatchling Lang a easy to read and write simple programming language for education.
+
+## Get Started
+Run the following commands
+* `npm install react-router-dom`
+* `npm install bootstrap`
