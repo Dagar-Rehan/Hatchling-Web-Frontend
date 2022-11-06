@@ -1,0 +1,15 @@
+.AboutPage-div {
+    background-color: rgb(3, 3, 83);
+}
+
+.AboutPage-title, .AboutPage-abstract {
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.AboutPage-abstract-concepts {
+    padding-left: 4em;
+}
