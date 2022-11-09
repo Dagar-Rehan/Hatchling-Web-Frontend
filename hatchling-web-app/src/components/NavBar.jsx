@@ -5,7 +5,7 @@ export default function Navbar(){
             <nav className="nav">
                 <div id="Icon">
                   <img src={logo} alt="Logo" className="logo"/>
-                  <a href="/" className="site-title" >Hatchling</a>
+                  <Link to="/" className="site-title" >Hatchling</Link>
                 </div>
                 <ul>
                     <li>
