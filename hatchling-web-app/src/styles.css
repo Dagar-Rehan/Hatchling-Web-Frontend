@@ -3,6 +3,7 @@
 }
 body {
     margin: 0;
+    background-color:rgb(0, 0, 0);
 }
 
 .nav {
@@ -17,7 +18,7 @@ body {
 .nav #Icon {
   grid-column: 1 / 2;
   justify-self: start;
-  padding-left: 5em;
+  padding-left: 2em;
 }
 
 .logo {
@@ -27,9 +28,12 @@ body {
 
 .site-title {
     width: 100%;
-    font-size: 1rem;
+    font-size: 2rem;
     color:rgb(0, 180, 9);
     padding-left: 1rem;
+    text-decoration: underline;
+    text-decoration-color: green;
+    text-underline-offset: 10px;
 }
 
 .nav ul {
@@ -40,10 +44,8 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
-}
-
-.nav a {
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 5px
 }
 
 .home {
