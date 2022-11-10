@@ -15,20 +15,26 @@
 }
 
 .Texteditor{
-    line-height: 21px;
-    padding: 0;
-    border: 0;
     background: #282a3a;
+    background-image: url(http://i.imgur.com/2cOaJ.png);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    padding-top: 10px;
+    line-height: 21px;
+    border-color: #ccc;
+    border: 0;
     color: #FFF;
     min-width: 500px;
     min-height: 500px;
     outline: none;
     resize: vertical;
+    resize: horizontal;
     grid-column: 1 / 2;
-    padding: 2em;
     justify-self: start;
     width:  calc(100vw - 50rem);      /* calc and viewport to the rescue */
     height: calc(100vh - 20px);
+    white-space: nowrap;
   }
 
 .Run-button {

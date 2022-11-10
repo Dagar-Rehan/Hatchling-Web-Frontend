@@ -25,7 +25,7 @@ class Texteditor extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="Texteditor-div">
                     <label>
-                        <textarea className="Texteditor" type="text" value={this.state.value} onChange={this.handleChange} />
+                        <textarea rows="10" cols="40" className="Texteditor" type="text" value={this.state.value} onChange={this.handleChange} />
                     </label>
                     <input className="Run-button" type="submit" value="Submit" />
                 </div>
