@@ -1,12 +1,12 @@
 import NavBar from "../components/NavBar"
-
+import TextEditor from "../components/TextEditor";
 
 export default function HomePage() {
 
   return (
     <>
       <NavBar />
-      <h1>HomePage</h1>
+      <TextEditor />
     </>
   );
 }

@@ -1,0 +1,40 @@
+.Home-container-div {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.Texteditor-div {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 3rem;
+    padding-left: 2rem;
+}
+
+.Texteditor{
+    line-height: 21px;
+    padding: 0;
+    border: 0;
+    background: #282a3a;
+    color: #FFF;
+    min-width: 500px;
+    min-height: 500px;
+    outline: none;
+    resize: vertical;
+    grid-column: 1 / 2;
+    padding: 2em;
+    justify-self: start;
+    width:  calc(100vw - 50rem);      /* calc and viewport to the rescue */
+    height: calc(100vh - 20px);
+  }
+
+.Run-button {
+    grid-column: 2/3;
+    justify-self: end;
+    margin-bottom: 38rem;
+    margin-left: 3rem;
+  }
+  
