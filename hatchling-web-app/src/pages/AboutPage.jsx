@@ -44,7 +44,7 @@ export default function AboutPage() {
           <p>{license}</p>
 
           <h2>Abstract</h2>
-          <p>{abstract}</p>
+          <p className="AboutPage-abstract-passage">{abstract}</p>
         </div>
 
       </body>

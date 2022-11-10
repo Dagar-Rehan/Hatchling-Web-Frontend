@@ -1,7 +1,3 @@
-.AboutPage-div {
-    background-color: rgb(3, 3, 83);
-}
-
 .AboutPage-title, .AboutPage-abstract {
     color: white;
     padding-left: 1em;
@@ -10,6 +6,15 @@
     text-justify: inter-word;
 }
 
+.AboutPage-title {
+    text-align: center;
+}
+
 .AboutPage-abstract-concepts {
     padding-left: 4em;
+}
+
+.AboutPage-abstract-passage {
+    padding-left: 2em;
+    padding-right: 2em;
 }
