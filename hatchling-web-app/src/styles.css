@@ -13,6 +13,8 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 
 .nav #Icon {
