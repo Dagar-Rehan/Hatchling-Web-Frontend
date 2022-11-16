@@ -1,14 +1,13 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "../src/pages/HomePage.jsx";
-import CharactersPage from "../src/pages/CharactersPage.jsx";
-import AboutPage from "../src/pages/AboutPage.jsx";
-import HelpPage from "../src/pages/HelpPage.jsx";
-import Error404Page from "../src/pages/Error404Page.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import CharactersPage from "./pages/CharactersPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import HelpPage from "./pages/HelpPage.jsx";
+import Error404Page from "./pages/Error404Page.jsx";
 
 function App() {
   return (
-    <Router>
+    <Router className="bg-stone-800 text-lime-200">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/characters" element={<CharactersPage />} />

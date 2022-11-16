@@ -1,8 +1,7 @@
-import grid_png from "../components/grid_switch.png";
-import load_png from "../components/load_button.png";
-import save_png from "../components/save_button.png";
-import run_png from "../components/run_button.png";
-import "../AboutPage.css";
+import grid_png from "../assets/grid_switch.png";
+import load_png from "../assets/load_button.png";
+import save_png from "../assets/save_button.png";
+import run_png from "../assets/run_button.png";
 import NavBar from "../components/NavBar.jsx";
 
 export default function HelpPage() {
