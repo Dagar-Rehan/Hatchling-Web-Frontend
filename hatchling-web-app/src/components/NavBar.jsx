@@ -1,26 +1,36 @@
-import logo from './Hatchling.png';
+import logo from "./Hatchling.png";
 import { Link } from "react-router-dom";
-export default function Navbar(){
-    return (
-            <nav className="nav">
-                <div id="Icon">
-                  <img src={logo} alt="Logo" className="logo"/>
-                  <Link to="/" className="site-title" >Hatchling</Link>
-                </div>
-                <ul>
-                    <li>
-                        <Link to="/" className="home">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/Characters" className="characters">Characters</Link>
-                    </li>
-                    <li>
-                        <Link to="/Help" className="help">Help</Link>
-                    </li>
-                    <li>
-                        <Link to="/About" className="about">About</Link>
-                    </li>
-                </ul>
-            </nav>
-    );
+export default function Navbar() {
+  return (
+    <nav className="nav">
+      <div id="Icon">
+        <img src={logo} alt="Logo" className="logo" />
+        <Link to="/" className="site-title">
+          Hatchling
+        </Link>
+      </div>
+      <ul>
+        <li>
+          <Link to="/" className="home">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/Characters" className="characters">
+            Characters
+          </Link>
+        </li>
+        <li>
+          <Link to="/Help" className="help">
+            Help
+          </Link>
+        </li>
+        <li>
+          <Link to="/About" className="about">
+            About
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
