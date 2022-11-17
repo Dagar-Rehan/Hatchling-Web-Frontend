@@ -6,7 +6,7 @@ export default function Navbar() {
   let [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 grid grid-cols-2 grid-rows-1 bg-zinc-800 md:px-4 lg:px-8 xl:px-16">
+      <nav className="sticky top-0 z-10 grid grid-cols-2 grid-rows-1 bg-zinc-800 md:px-4 lg:px-8 xl:px-16">
         <div className="flex items-center justify-self-start px-4 md:px-8">
           <img src={logo} alt="Logo" className="h-auto w-8 md:w-16 lg:w-20" />
           <Link
