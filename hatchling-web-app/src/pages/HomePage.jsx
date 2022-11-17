@@ -1,11 +1,10 @@
 import NavBar from "../components/NavBar";
-import TextEditor from "../components/TextEditor";
 
 export default function HomePage() {
   return (
-    <div className="bg-stone-700">
+    <div className="">
       <NavBar />
-      <TextEditor />
+      <h1 className="text-center">Home Page</h1>
     </div>
   );
 }
