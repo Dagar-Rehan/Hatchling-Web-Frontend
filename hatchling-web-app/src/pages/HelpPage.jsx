@@ -20,36 +20,55 @@ export default function HelpPage() {
   return (
     <>
       <NavBar />
-      <body className="AboutPage-div">
-        <h1 className="AboutPage-title">HelpPage</h1>
-
-        <div className="AboutPage-abstract">
-          <h2>
-            <img src={run_png} alt="Run Button" className="run_button" />
-            -Run Button
-          </h2>
-          <p>{run_button}</p>
-
-          <h2>
-            <img src={save_png} alt="Save Button" className="save_button" />
-            -The Save Button
-          </h2>
-          <p>{save_button}</p>
-
-          <h2>
-            <img src={load_png} alt="Load Button" className="load_button" />
-            -Load Button
-          </h2>
-          <p>{load_button}</p>
-
-          <h2>
-            <img src={grid_png} alt="Grid Switch" className="grid_switch" />
-            -Grid Switch
-          </h2>
-
-          <p>{grid_switch}</p>
+      <div className="p-4 md:p-8 mx-auto">
+        <h1 className="text-center">HelpPage</h1>
+        <div className="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-2">
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+            <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
+              The Run Button
+            </p>
+            <img
+              src={run_png}
+              alt="Run Button"
+              className="border-2 border-transparent rounded"
+            />
+            <p>{run_button}</p>
+          </div>
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+            <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
+              The Save Button
+            </p>
+            <img
+              src={save_png}
+              alt="Save Button"
+              className="border-2 border-transparent rounded"
+            />
+            <p>{save_button}</p>
+          </div>
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+            <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
+              The Load Button
+            </p>
+            <img
+              src={load_png}
+              alt="Load Button"
+              className="border-2 border-transparent rounded"
+            />
+            <p>{load_button}</p>
+          </div>
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+            <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
+              The Grid Switch
+            </p>
+            <img
+              src={grid_png}
+              alt="Grid Switch"
+              className="border-2 border-transparent rounded"
+            />
+            <p>{grid_switch}</p>
+          </div>
         </div>
-      </body>
+      </div>
     </>
   );
 }
