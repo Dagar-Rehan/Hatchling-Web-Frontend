@@ -24,37 +24,37 @@ export default function HelpPage() {
   return (
     <>
       <NavBar />
-      <div className="p-4 md:p-8 mx-auto">
+      <div className="p-4 md:p-8 mx-auto max-w-screen-xl">
         <h1 className="text-center">HelpPage</h1>
         <div className="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-2">
-          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:bg-slate-800 bg-slate-900">
             <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
               The Run Button
             </p>
             <button className="bg-cyan-900 text-white flex border-2 border-cyan-900 rounded p-2 hover:scale-105 active:scale-95">
               <PlayArrowIcon color="white" fontSize="large" />
             </button>
-            <p>{run_button}</p>
+            <p className="py-2">{run_button}</p>
           </div>
-          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:bg-slate-800 bg-slate-900">
             <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
               The Save Button
             </p>
             <button className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center p-2 hover:scale-105 active:scale-95">
               Save <SaveIcon color="white" fontSize="large" />
             </button>
-            <p>{save_button}</p>
+            <p className="py-2">{save_button}</p>
           </div>
-          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:bg-slate-800 bg-slate-900">
             <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
               The Load Button
             </p>
             <button className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center p-2 hover:scale-105 active:scale-95">
               Load <DescriptionIcon color="white" fontSize="large" />
             </button>
-            <p>{load_button}</p>
+            <p className="py-2">{load_button}</p>
           </div>
-          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:scale-105 bg-slate-900">
+          <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:bg-slate-800 bg-slate-900">
             <p className="text-bold text-xl text-center lg:text-2xl xl:text-3xl">
               The Grid Switch
             </p>
@@ -69,7 +69,7 @@ export default function HelpPage() {
                 <GridOffIcon color="white" fontSize="large" />
               )}
             </button>
-            <p>{grid_switch}</p>
+            <p className="py-2">{grid_switch}</p>
           </div>
         </div>
       </div>

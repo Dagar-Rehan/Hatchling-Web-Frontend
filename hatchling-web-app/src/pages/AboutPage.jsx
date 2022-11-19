@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <NavBar />
-      <div className="p-4 md:p-8 mx-auto">
+      <div className="p-4 md:p-8 mx-auto max-w-screen-xl">
         <h1 className="text-center">AboutPage</h1>
         <div className="divide-y-2">
           <div className="py-4">
