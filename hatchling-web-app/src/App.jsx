@@ -8,7 +8,7 @@ import Error404Page from "./pages/Error404Page.jsx";
 
 function App() {
   return (
-    <Router className="bg-stone-800 text-lime-200">
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/editor" element={<EditorPage />} />
