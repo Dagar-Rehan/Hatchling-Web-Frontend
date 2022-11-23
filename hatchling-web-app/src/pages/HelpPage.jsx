@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SaveIcon from "@material-ui/icons/Save";
@@ -24,7 +25,13 @@ export default function HelpPage() {
   return (
     <>
       <NavBar />
-      <div className="p-4 md:p-8 mx-auto max-w-screen-xl">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 1.2 }}
+        className="p-4 md:p-8 mx-auto max-w-screen-xl"
+      >
         <h1 className="text-center">HelpPage</h1>
         <div className="lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-2">
           <div className="m-2 md:m-0 p-2 md:p-4 border-2 border-slate-600 rounded hover:bg-slate-800 bg-slate-900">
@@ -72,7 +79,7 @@ export default function HelpPage() {
             <p className="py-2">{grid_switch}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

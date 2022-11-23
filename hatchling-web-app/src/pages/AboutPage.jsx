@@ -1,4 +1,4 @@
-import "../AboutPage.css";
+import { motion } from "framer-motion";
 import NavBar from "../components/NavBar.jsx";
 
 export default function AboutPage() {
@@ -19,7 +19,13 @@ export default function AboutPage() {
   return (
     <>
       <NavBar />
-      <div className="p-4 md:p-8 mx-auto max-w-screen-xl">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 1.2 }}
+        className="p-4 md:p-8 mx-auto max-w-screen-xl"
+      >
         <h1 className="text-center">AboutPage</h1>
         <div className="divide-y-2">
           <div className="py-4">
@@ -48,7 +54,7 @@ export default function AboutPage() {
             <p className="px-4">{abstract}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
