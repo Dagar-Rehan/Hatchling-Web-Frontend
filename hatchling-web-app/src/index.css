@@ -14,7 +14,11 @@ h6 {
 }
 
 body {
-  @apply font-space m-0;
+  @apply font-space m-0 p-0;
+  background-color: black;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 code {
