@@ -34,20 +34,26 @@ export default function Texteditor() {
     var load_file = false;
     const fileUploaded = event.target.files[0];
 
-    if (
-      window.confirm(
-        `Are you sure you want to upload file ${fileUploaded.name} ?`
-      )
-    ) {
-      load_file = true;
-    }
+    const fileSplit = fileUploaded.name.split(".");
 
-    if (load_file) {
-      var reader = new FileReader();
-      reader.onload = function (event) {
-        setCode(event.target.result);
-      };
-      reader.readAsText(fileUploaded);
+    if (fileSplit[1] === inputFIleExtension && fileSplit.length === 2) {
+      if (
+        window.confirm(
+          `Are you sure you want to upload file ${fileUploaded.name} ?`
+        )
+      ) {
+        load_file = true;
+      }
+
+      if (load_file) {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          setCode(event.target.result);
+        };
+        reader.readAsText(fileUploaded);
+      }
+    } else {
+      alert(`Please select a file with the extension .${inputFIleExtension}`);
     }
   }
 
@@ -55,6 +61,7 @@ export default function Texteditor() {
   const [grid, setGrid] = useState(false);
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
   const inputFile = useRef(null);
+  const inputFIleExtension = "hac";
 
   useEffect(() => {
     function handleResize() {
