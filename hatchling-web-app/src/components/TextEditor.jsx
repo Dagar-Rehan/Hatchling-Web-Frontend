@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SaveIcon from "@material-ui/icons/Save";
 import DescriptionIcon from "@material-ui/icons/Description";
@@ -27,26 +27,27 @@ export default function Texteditor() {
   }
 
   function onLoadButtonClick() {
-    //`current` points to the mounted file input element
-    console.log("Hello Wolrd")
-   inputFile.current.click();
+    inputFile.current.click();
   }
 
   function handelInputFile(event) {
     var load_file = false;
     const fileUploaded = event.target.files[0];
 
-    if (window.confirm('Are you sure you want to upload file \'' + fileUploaded.name + '\'?')) {
+    if (
+      window.confirm(
+        `Are you sure you want to upload file ${fileUploaded.name} ?`
+      )
+    ) {
       load_file = true;
     }
 
-    if(load_file) {
+    if (load_file) {
       var reader = new FileReader();
-      reader.onload = function(event) {
-        // The file's text will be printed here
-        handleChange(event.target.result)
+      reader.onload = function (event) {
+        setCode(event.target.result);
       };
-    reader.readAsText(fileUploaded);
+      reader.readAsText(fileUploaded);
     }
   }
 
@@ -103,17 +104,22 @@ export default function Texteditor() {
               />
             )}
           </button>
-
-          <input type='file' id='file' ref={inputFile} onChange={handelInputFile} style={{display: 'none'}}/>
-
-          <button onClick={onLoadButtonClick} className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95">
+          <input
+            type="file"
+            id="file"
+            ref={inputFile}
+            onChange={handelInputFile}
+            style={{ display: "none" }}
+          />
+          <button
+            onClick={onLoadButtonClick}
+            className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95"
+          >
             Load{" "}
             <DescriptionIcon
               fontSize={windowSize.width >= MD_BREAKPOINT ? "large" : "small"}
             />
           </button>
-
-
           <button className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95">
             Save{" "}
             <SaveIcon
