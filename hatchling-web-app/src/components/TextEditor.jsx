@@ -36,7 +36,7 @@ export default function Texteditor() {
 
     const fileSplit = fileUploaded.name.split(".");
 
-    if (fileSplit[1] === inputFIleExtension && fileSplit.length === 2) {
+    if (fileSplit[1] === INPUT_FILE_EXTENSION && fileSplit.length === 2) {
       if (
         window.confirm(
           `Are you sure you want to upload file ${fileUploaded.name} ?`
@@ -53,7 +53,7 @@ export default function Texteditor() {
         reader.readAsText(fileUploaded);
       }
     } else {
-      alert(`Please select a file with the extension .${inputFIleExtension}`);
+      alert(`Please select a file with the extension .${INPUT_FILE_EXTENSION}`);
     }
   }
 
@@ -61,7 +61,7 @@ export default function Texteditor() {
   const [grid, setGrid] = useState(false);
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
   const inputFile = useRef(null);
-  const inputFIleExtension = "hac";
+  const INPUT_FILE_EXTENSION = "hac";
 
   useEffect(() => {
     function handleResize() {
@@ -117,6 +117,7 @@ export default function Texteditor() {
             ref={inputFile}
             onChange={handelInputFile}
             style={{ display: "none" }}
+            accept={`.${INPUT_FILE_EXTENSION}`}
           />
           <button
             onClick={onLoadButtonClick}
