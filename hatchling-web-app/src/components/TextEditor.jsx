@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import SaveIcon from "@material-ui/icons/Save";
+import DownloadIcon from '@mui/icons-material/Download';
 import DescriptionIcon from "@material-ui/icons/Description";
 import GridOnIcon from "@mui/icons-material/GridOn";
 import GridOffIcon from "@mui/icons-material/GridOff";
@@ -56,6 +56,26 @@ export default function Texteditor() {
       alert(`Please select a file with the extension .${INPUT_FILE_EXTENSION}`);
     }
   }
+
+  function onDownloadButtonClick() {
+    var blob = new Blob([code], { type: 'text/plain' });
+
+    let link = document.createElement("a");
+    //link.download = fileDownloaded.name;
+    link.setAttribute(
+       'download',
+       'Test.hac'
+     );
+      link.href = window.URL.createObjectURL(blob);
+      document.body.appendChild(link);
+      link.click();
+
+      setTimeout(() => {
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(link.href);
+      }, 100);
+  }
+
 
   const [code, setCode] = useState("");
   const [grid, setGrid] = useState(false);
@@ -113,7 +133,7 @@ export default function Texteditor() {
           </button>
           <input
             type="file"
-            id="file"
+            id="file-input"
             ref={inputFile}
             onChange={handelInputFile}
             style={{ display: "none" }}
@@ -128,12 +148,13 @@ export default function Texteditor() {
               fontSize={windowSize.width >= MD_BREAKPOINT ? "large" : "small"}
             />
           </button>
-          <button className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95">
-            Save{" "}
-            <SaveIcon
+          <button onClick={onDownloadButtonClick} className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95">
+            Download{" "}
+            <DownloadIcon
               fontSize={windowSize.width >= MD_BREAKPOINT ? "large" : "small"}
             />
           </button>
+
         </div>
         <canvas className="bg-slate-900 border-2 border-slate-600 rounded p-2 w-full h-full"></canvas>
       </div>
