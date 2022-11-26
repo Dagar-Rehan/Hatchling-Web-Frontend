@@ -165,7 +165,59 @@ export default function Texteditor() {
             />
           </button>
         </div>
-        <canvas className="bg-slate-900 border-2 border-slate-600 rounded p-2 w-full h-full"></canvas>
+        <div className="bg-slate-900 border-2 border-slate-600 rounded p-2 w-full h-full">
+          <div
+            className={`${
+              grid ? "grid" : "hidden"
+            } grid-cols-3 grid-rows-3 gap-1 items-center justify-items-center w-full h-full z-50 transition-all ease-in-out duration-300 pointer-events-none select-none`}
+          >
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                0
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                1
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                2
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                3
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                4
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                5
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                6
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                7
+              </div>
+            </div>
+            <div className="m-1 p-1 outline-4 outline-dashed outline-cyan-900 w-full h-full flex justify-center items-center">
+              <div className="opacity-50 text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                8
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
