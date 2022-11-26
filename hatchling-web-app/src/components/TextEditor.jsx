@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SaveIcon from "@material-ui/icons/Save";
 import DescriptionIcon from "@material-ui/icons/Description";
@@ -26,9 +26,42 @@ export default function Texteditor() {
     alert("A name was submitted: " + code);
   }
 
+  function onLoadButtonClick() {
+    inputFile.current.click();
+  }
+
+  function handelInputFile(event) {
+    var load_file = false;
+    const fileUploaded = event.target.files[0];
+
+    const fileSplit = fileUploaded.name.split(".");
+
+    if (fileSplit[1] === INPUT_FILE_EXTENSION && fileSplit.length === 2) {
+      if (
+        window.confirm(
+          `Are you sure you want to upload file ${fileUploaded.name} ?`
+        )
+      ) {
+        load_file = true;
+      }
+
+      if (load_file) {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          setCode(event.target.result);
+        };
+        reader.readAsText(fileUploaded);
+      }
+    } else {
+      alert(`Please select a file with the extension .${INPUT_FILE_EXTENSION}`);
+    }
+  }
+
   const [code, setCode] = useState("");
   const [grid, setGrid] = useState(false);
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
+  const inputFile = useRef(null);
+  const INPUT_FILE_EXTENSION = "hac";
 
   useEffect(() => {
     function handleResize() {
@@ -78,7 +111,18 @@ export default function Texteditor() {
               />
             )}
           </button>
-          <button className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95">
+          <input
+            type="file"
+            id="file"
+            ref={inputFile}
+            onChange={handelInputFile}
+            style={{ display: "none" }}
+            accept={`.${INPUT_FILE_EXTENSION}`}
+          />
+          <button
+            onClick={onLoadButtonClick}
+            className="bg-cyan-900 text-white border-2 border-cyan-900 rounded flex items-center gap-1 p-2 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95"
+          >
             Load{" "}
             <DescriptionIcon
               fontSize={windowSize.width >= MD_BREAKPOINT ? "large" : "small"}
