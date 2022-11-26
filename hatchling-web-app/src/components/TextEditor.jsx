@@ -100,7 +100,7 @@ export default function Texteditor() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 grid-rows-2 sm:p-4 lg:p-8 mx-auto lg:grid-cols-2 lg:grid-rows-1 h-full max-w-screen-xl">
+    <div className="grid grid-cols-1 grid-rows-2 sm:p-4 lg:p-8 mx-auto lg:grid-cols-2 lg:grid-rows-1 h-[calc(100vh-7em)] max-h-screen max-w-screen-xl">
       <div className="px-2 lg:p-2">
         <Editor
           className="bg-slate-900 text-white border-2 border-slate-600 rounded w-full h-full resize-none"
