@@ -60,7 +60,7 @@ export default function Texteditor() {
   function onDownloadButtonClick() {
     const fileName = prompt("Enter File Name");
 
-     if (fileName === "" || fileName.replace(/\s/g, "").length === 0) {
+    if (fileName === "" || fileName.replace(/\s/g, "").length === 0) {
       alert(`Please enter a valid file name.`);
       return;
     } else {
