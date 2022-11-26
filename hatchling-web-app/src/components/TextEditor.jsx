@@ -58,11 +58,12 @@ export default function Texteditor() {
   }
 
   function onDownloadButtonClick() {
+    const fileName = prompt("Enter File Name");
+
     var blob = new Blob([code], { type: "text/plain" });
 
     let link = document.createElement("a");
-    //link.download = fileDownloaded.name;
-    link.setAttribute("download", "Test.hac");
+    link.setAttribute("download", fileName);
     link.href = window.URL.createObjectURL(blob);
     document.body.appendChild(link);
     link.click();
