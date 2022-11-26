@@ -60,18 +60,29 @@ export default function Texteditor() {
   function onDownloadButtonClick() {
     const fileName = prompt("Enter File Name");
 
-    var blob = new Blob([code], { type: "text/plain" });
+    if (fileName === null) {
+      //Do nothing
+    } else if (fileName === "" || !fileName.replace(/\s/g, "").length) {
+      alert(`Please enter a valid file name.`);
+    } else {
+      var blob = new Blob([code], { type: "text/plain" });
+      let link = document.createElement("a");
 
-    let link = document.createElement("a");
-    link.setAttribute("download", fileName);
-    link.href = window.URL.createObjectURL(blob);
-    document.body.appendChild(link);
-    link.click();
+      if (fileName.includes(`.${INPUT_FILE_EXTENSION}`)) {
+        link.setAttribute("download", fileName);
+      } else {
+        link.setAttribute("download", fileName + `.${INPUT_FILE_EXTENSION}`);
+      }
 
-    setTimeout(() => {
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(link.href);
-    }, 100);
+      link.href = window.URL.createObjectURL(blob);
+      document.body.appendChild(link);
+      link.click();
+
+      setTimeout(() => {
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(link.href);
+      }, 100);
+    }
   }
 
   const [code, setCode] = useState("");
