@@ -62,7 +62,7 @@ export default function Texteditor() {
 
     if (fileName === null) {
       //Do nothing
-    } else if (fileName === "" || !fileName.replace(/\s/g, "").length) {
+    } else if (fileName === "" || fileName.replace(/\s/g, "").length === 0) {
       alert(`Please enter a valid file name.`);
     } else {
       var blob = new Blob([code], { type: "text/plain" });
