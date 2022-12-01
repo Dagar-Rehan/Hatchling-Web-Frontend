@@ -6,6 +6,7 @@ import GridOnIcon from "@mui/icons-material/GridOn";
 import GridOffIcon from "@mui/icons-material/GridOff";
 
 import Editor from "@monaco-editor/react";
+import faker from "../utils/faker";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -23,7 +24,8 @@ export default function Texteditor() {
   }
 
   function handleRun() {
-    alert("A name was submitted: " + code);
+    let output = faker(code);
+    console.log({ code, output });
   }
 
   function onLoadButtonClick() {
