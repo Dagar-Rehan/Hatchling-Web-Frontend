@@ -27,14 +27,21 @@ export default function Texteditor() {
   function handleRun() {
     let output = faker(code);
     var information = JSON.parse(output);
-    characters_list.length = 0
+    characters_list.length = 0;
+    locations_list.length = 0;
 
     for (var i = 0; i < information.characters.length; i++) {
-      const char = information.characters[0];
+      const char = information.characters[i];
       characters_list.push(new Character(char.id, char.hair_color, char.eye_color, char.skin_color, char.outfit));
     }
 
+    for (var i = 0; i < information.locations.length; i++) {
+      const loc = information.locations[i];
+      locations_list.push(new Character(loc.character_id, loc.x, loc.y, loc.order));
+    }
     
+
+    console.log(information.locations);
   }
 
   function onLoadButtonClick() {
@@ -102,7 +109,7 @@ export default function Texteditor() {
   const INPUT_FILE_EXTENSION = "hac";
 
   const characters_list = []
-  
+  const locations_list = []
 
   useEffect(() => {
     function handleResize() {

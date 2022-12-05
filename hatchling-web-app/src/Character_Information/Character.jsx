@@ -10,11 +10,11 @@ export default class Character {
         this.y = 0;
       }
 
-      get getX() {
+      get X() {
         return this.x;
       }
 
-      get getY() {
+      get Y() {
         return this.y;
       }
 
