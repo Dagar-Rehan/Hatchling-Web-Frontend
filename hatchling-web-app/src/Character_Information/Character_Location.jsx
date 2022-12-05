@@ -1,10 +1,10 @@
 
-export default class Location {
-    constructor(id, x, y, order) {
+export default class Character_Location {
+    constructor(id, x, y, o) {
         this.id = id;
         this.x = x;
         this.y = y;
-        this.order = order;
+        this.order = o;
       }
 
       get X() {
@@ -15,7 +15,11 @@ export default class Location {
         return this.y;
       }
 
-      get order() {
+      get Id() {
+        return this.id;
+      }
+
+      get Order() {
         return this.order;
       }
 }

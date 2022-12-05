@@ -1,4 +1,3 @@
-
 export default class Character {
     constructor(id, hair_color, eye_color, skin_color, outfit) {
         this.id = id;
@@ -6,7 +5,7 @@ export default class Character {
         this.eye_color = eye_color;
         this.skin_color = skin_color;
         this.outfit = outfit;
-        this.x = 66;
+        this.x = 0;
         this.y = 0;
       }
 
@@ -16,6 +15,10 @@ export default class Character {
 
       get Y() {
         return this.y;
+      }
+
+      get Id() {
+        return this.id;
       }
 
       /**

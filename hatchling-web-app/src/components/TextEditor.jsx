@@ -8,6 +8,8 @@ import GridOffIcon from "@mui/icons-material/GridOff";
 import Editor from "@monaco-editor/react";
 import faker from "../utils/faker";
 import Character from "../Character_Information/Character"
+import Character_Location from "../Character_Information/Character_Location"
+import Message from "../Character_Information/Message";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -26,22 +28,31 @@ export default function Texteditor() {
 
   function handleRun() {
     let output = faker(code);
+    parseJsonOutput(output);
+    console.log(output, code);
+  }
+
+  function parseJsonOutput(output) {
     var information = JSON.parse(output);
     characters_list.length = 0;
     locations_list.length = 0;
+    messages_list.length = 0;
+    var i = 0;
 
-    for (var i = 0; i < information.characters.length; i++) {
+    for (i = 0; i < information.characters.length; i++) {
       const char = information.characters[i];
       characters_list.push(new Character(char.id, char.hair_color, char.eye_color, char.skin_color, char.outfit));
     }
 
-    for (var i = 0; i < information.locations.length; i++) {
+    for (i = 0; i < information.locations.length; i++) {
       const loc = information.locations[i];
-      locations_list.push(new Character(loc.character_id, loc.x, loc.y, loc.order));
+      locations_list.push(new Character_Location(loc.character_id, loc.x, loc.y, loc.order));
     }
-    
 
-    console.log(information.locations);
+    for (i = 0; i < information.messages.length; i++) {
+      const mes = information.messages[i];
+      messages_list.push(new Message(mes.character_id, mes.message, mes.order));
+    }
   }
 
   function onLoadButtonClick() {
@@ -108,8 +119,9 @@ export default function Texteditor() {
   const inputFile = useRef(null);
   const INPUT_FILE_EXTENSION = "hac";
 
-  const characters_list = []
-  const locations_list = []
+  const characters_list = [];
+  const locations_list = [];
+  const messages_list = [];
 
   useEffect(() => {
     function handleResize() {
