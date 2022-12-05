@@ -7,6 +7,7 @@ import GridOffIcon from "@mui/icons-material/GridOff";
 
 import Editor from "@monaco-editor/react";
 import faker from "../utils/faker";
+import Character from "../Character_Information/Character"
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -25,7 +26,15 @@ export default function Texteditor() {
 
   function handleRun() {
     let output = faker(code);
-    console.log({ code, output });
+    var information = JSON.parse(output);
+    characters_list.length = 0
+
+    for (var i = 0; i < information.characters.length; i++) {
+      const char = information.characters[0];
+      characters_list.push(new Character(char.id, char.hair_color, char.eye_color, char.skin_color, char.outfit));
+    }
+
+    
   }
 
   function onLoadButtonClick() {
@@ -91,6 +100,9 @@ export default function Texteditor() {
   const [windowSize, setWindowSize] = useState(getWindowDimensions());
   const inputFile = useRef(null);
   const INPUT_FILE_EXTENSION = "hac";
+
+  const characters_list = []
+  
 
   useEffect(() => {
     function handleResize() {
