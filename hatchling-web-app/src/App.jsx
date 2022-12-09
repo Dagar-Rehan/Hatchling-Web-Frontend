@@ -10,7 +10,7 @@ import Error404Page from "./pages/Error404Page.jsx";
 function App() {
   return (
     <Router>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/editor" element={<EditorPage />} />
